@@ -24,5 +24,4 @@ const parityOutlier = (integers) => {
   }
   return null;
 };
-
 module.exports = parityOutlier;

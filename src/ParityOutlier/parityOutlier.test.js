@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 const parityOutlier = require('./parityOutlier');
-
 describe('Parity Outlier', () => {
   test('even array should return 11', () => {
     expect(parityOutlier([2, 4, 0, 100, 4, 11, 2602, 36])).toBe(11);
