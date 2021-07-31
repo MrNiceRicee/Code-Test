@@ -5,6 +5,7 @@
 node_modules
 package-lock.json
 yarn.lock
+jsconfig.json
 
 
 # Swap the comments on the following lines if you don't wish to use zero-installs
