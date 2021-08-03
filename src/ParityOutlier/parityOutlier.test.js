@@ -14,4 +14,7 @@ describe('Parity Outlier', () => {
   test('odd array should return 2', () => {
     expect(parityOutlier([1, 2, 3])).toBe(2);
   });
+  test('edgeCase', () => {
+    expect(parityOutlier([])).toBe(null);
+  });
 });

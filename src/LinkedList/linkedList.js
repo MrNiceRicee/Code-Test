@@ -58,6 +58,44 @@ class LinkedList {
     this.size += 1;
     return this.size;
   }
+
+  // remove node from index
+  removeFrom(index) {
+    if (index < 0 || index >= this.size) {
+      return 'Invalid';
+    }
+    let current = this.head;
+    let previous = current;
+    let iterator = 0;
+    if (index === 0) {
+      // just move the head forward by one
+      this.head = current.next;
+    } else {
+      while (iterator < index) {
+        iterator += 1;
+        previous = current;
+        current = current.next;
+      }
+      // skip the "current" by going to the next
+      // this removes the "current" node
+      previous.next = current.next;
+    }
+    this.size -= 1;
+    return current.value; // return the removed element
+  }
+
+  // Helpers
+  getFirst() {
+    return this.head;
+  }
+
+  getLast() {
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    return current;
+  }
 }
 
 module.exports = LinkedList;
