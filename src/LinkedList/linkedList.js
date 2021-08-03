@@ -6,6 +6,7 @@ class LinkedList {
     this.size = 0;
   }
 
+  // basic add to the structure
   add(value) {
     const newNode = new Node(value);
 
@@ -25,6 +26,37 @@ class LinkedList {
       current.next = newNode;
     }
     this.size += 1;
+  }
+
+  // add at certain index
+  insertAt(value, index) {
+    if (index < 0 || index > this.size) {
+      return 'Invalid';
+    }
+    const node = new Node(value);
+    let current;
+    let previous;
+    current = this.head;
+    // check if its affecting the root
+    if (index === 0) {
+      // add the current head as the next
+      node.next = this.head;
+      // replace head with the new node
+      this.head = node;
+    } else {
+      let iterator = 0;
+      while (iterator < index) {
+        iterator += 1;
+        previous = current;
+        current = current.next;
+      }
+      // add the last bits on the node.next
+      node.next = current;
+      // join the previous to the node list
+      previous.next = node;
+    }
+    this.size += 1;
+    return this.size;
   }
 }
 

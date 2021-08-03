@@ -16,4 +16,13 @@ describe('LinkedList', () => {
     expect(head.head.next.value).toBe(2);
     expect(head.head.next.next.value).toBe(3);
   });
+  test('should add 2 initial nodes, and 1 in between', () => {
+    head.add(1);
+    head.add(3);
+    expect(head.size).toBe(2);
+    head.insertAt(2, 1);
+    expect(head.size).toBe(3);
+    expect(head.head.value).toBe(1);
+    expect(head.head.next.value).toBe(2);
+    expect(head.head.next.next.value).toBe(3);  });
 });

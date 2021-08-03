@@ -15,6 +15,4 @@ const simplePigLatin = (str) => str.split(' ').map((word) => (
     : word
 )).join(' ');
 
-console.log(simplePigLatin('O tempora o mores !'));
-
 module.exports = simplePigLatin;
