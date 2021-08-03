@@ -35,6 +35,24 @@ describe('LinkedList', () => {
     expect(head.size).toBe(2);
     expect(head.head.value).toBe(2);
   });
+  test('removeFrom', () => {
+    head.add(1);
+    head.add(2);
+    head.add(3);
+    expect(head.size).toBe(3);
+    head.removeFrom(2);
+    expect(head.size).toBe(2);
+    expect(head.getLast().value).toBe(2);
+  });
+  test('removeFrom edge case', () => {
+    head.add(1);
+    head.add(2);
+    expect(head.size).toBe(2);
+    head.removeFrom(0);
+    expect(head.size).toBe(1);
+    expect(head.getFirst().value).toBe(2);
+    expect(head.removeFrom(-1)).toBe('Invalid');
+  });
   test('Helper First', () => {
     head.add(1);
     expect(head.getFirst().value).toBe(1);
