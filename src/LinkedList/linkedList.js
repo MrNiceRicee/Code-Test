@@ -84,6 +84,30 @@ class LinkedList {
     return current.value; // return the removed element
   }
 
+  removeValue(value) {
+    let current = this.head;
+    let previous = null;
+    while (current !== null) {
+      // if there is a match
+      if (current.value === value) {
+        // base case on match
+        if (previous === null) {
+          this.head = current.next;
+        } else {
+          // merge the first link to the last bits
+          previous.next = current.next;
+        }
+        this.size -= 1;
+        return current.value;
+      }
+      // track the last known list
+      previous = current;
+      // move the list forward one node
+      current = current.next;
+    }
+    return 'No match';
+  }
+
   // Helpers
   getFirst() {
     return this.head;
